@@ -9,7 +9,6 @@ from inception_blocks_v2 import faceRecoModel
 
 def main():
 
-    emoji_img = utils.load_image('media/man_emoji.png')
     model = uf.initModel()
     database = uf.initDatabase(model)
 

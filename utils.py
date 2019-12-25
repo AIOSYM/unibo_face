@@ -216,21 +216,6 @@ def roi_to_encoding(roi, model):
     embedding = model.predict_on_batch(x_train)
     return embedding
 
-def load_image(path):
-    img = cv2.imread(path)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    return img
-
-def drawEmoji(source_img, x, y):
-    emoji_img = load_image('media/man_emoji.png')
-    SIZE = int(source_img.shape[1] * 0.05)
-    emoji_img = cv2.resize(emoji_img, (SIZE, SIZE))
-    rows, cols, channels = emoji_img.shape
-
-    if (source_img.shape[1] > x+cols) and (source_img.shape[0]>y+rows):
-        emoji_img = cv2.addWeighted(source_img[y:y+rows, x:x+cols], 0.5, emoji_img, 0.5, 0)
-        source_img[y:y+rows, x:x+cols] = emoji_img
-
 def drawSegment(frame, top_left, bottom_right, color=(0,191,255), thickness=5):
     cv2.line(frame, top_left, bottom_right, color, thickness)
 
@@ -246,6 +231,5 @@ def drawBBox(frame, locations):
     drawSegment(frame, (right, bottom), (right-width_segment, bottom))
     drawSegment(frame, (right, bottom), (right, bottom-height_segment))
 
-    drawEmoji(frame, right, top)
 
 
