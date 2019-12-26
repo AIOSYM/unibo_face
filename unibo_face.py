@@ -11,7 +11,7 @@ USER_LIST = ['david', 'neruneru']
 
 def initModel():
     model = faceRecoModel(input_shape=INPUT_SHAPE)
-    #load_weights_from_FaceNet(model)
+    utils.load_weights_from_FaceNet(model)
     return model
 
 def initDatabase(model):
@@ -52,7 +52,7 @@ def identify_face(ROI, database, model):
             MIN_DIST = dist
             identity = name
 
-    if MIN_DIST > 0.7:
+    if MIN_DIST > 0.65:
         print("Not in the database." + str(MIN_DIST))
     else:
         print ("it's " + str(identity) + ", the distance is " + str(MIN_DIST))
