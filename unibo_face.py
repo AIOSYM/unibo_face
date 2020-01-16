@@ -11,7 +11,7 @@ USER_LIST = ['david', 'neruneru']
 
 def initModel():
     model = faceRecoModel(input_shape=INPUT_SHAPE)
-    utils.load_weights_from_FaceNet(model)
+    #utils.load_weights_from_FaceNet(model)
     return model
 
 def initDatabase(model):
