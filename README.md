@@ -16,36 +16,13 @@ face_recognition
 
 1. download and install anaconda https://docs.conda.io/en/latest/miniconda.html
 
-2. create new environment
+2. recreate the environment
 
-   ```
-   conda create -n unibo
-   ```
-
-3. activate the environment
-
-   ```python
-   conda activate unibo
+   ```bash
+   conda env create -f environment.yml
    ```
 
-4.  install requirement libraries (using `conda`)
-
-   ```
-   conda install python=3.7
-   conda install -c conda-forge opencv=4.1.1
-   conda install -c conda-forge keras=2.3.1
-   conda install -c conda-forge tensorflow=2.0.0
-   ```
-
-5. install requirement libraries (using `pip`)
-
-   ```
-   pip install -U numpy
-   pip install matplotlib
-   pip install face_recognition (take a while to install!)
-   ```
-
-6. download weight files from https://github.com/iwantooxxoox/Keras-OpenFace/tree/master/weights and put it in `weights/` folder.
+3. download weight files from https://github.com/iwantooxxoox/Keras-OpenFace/tree/master/weights and put it in `weights/` folder.
 
 ### Run demo
 
